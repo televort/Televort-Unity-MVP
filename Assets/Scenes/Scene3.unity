@@ -5239,7 +5239,7 @@ PrefabInstance:
     - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}
       propertyPath: startFromSecondTime
-      value: 1210
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}
@@ -5256,6 +5256,11 @@ PrefabInstance:
       propertyPath: objectsToRenderTheVideoImage.Array.data[2]
       value: 
       objectReference: {fileID: 1844793433}
+    - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
+        type: 3}
+      propertyPath: showThumbnailBeforeVideoLoad
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 114222573715148508, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}
       propertyPath: m_Text
