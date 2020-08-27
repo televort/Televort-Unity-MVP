@@ -2667,7 +2667,7 @@ GameObject:
   - component: {fileID: 1243354840}
   - component: {fileID: 1243354839}
   m_Layer: 5
-  m_Name: DestinationCanvas
+  m_Name: PortalPickerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4011,7 +4011,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1769770960}
   m_Layer: 0
-  m_Name: DestinationPicker_TextInputMethod
+  m_Name: PortalPicker_TextInputMethod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5229,7 +5229,7 @@ PrefabInstance:
     - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}
       propertyPath: youtubeUrl
-      value: https://www.youtube.com/watch?v=nlCJac8OTvA
+      value: https://www.youtube.com/watch?v=IokYKj5XSr8
       objectReference: {fileID: 0}
     - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}

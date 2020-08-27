@@ -2574,7 +2574,7 @@ GameObject:
   - component: {fileID: 1243354840}
   - component: {fileID: 1243354839}
   m_Layer: 5
-  m_Name: DestinationCanvas
+  m_Name: PortalPickerCanvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3657,22 +3657,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1600546971}
   - component: {fileID: 1600546970}
-  - component: {fileID: 1600546969}
   m_Layer: 0
   m_Name: Stage1Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1600546969
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1600546968}
-  m_Enabled: 1
+  m_IsActive: 0
 --- !u!20 &1600546970
 Camera:
   m_ObjectHideFlags: 0
@@ -3927,7 +3918,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1769770960}
   m_Layer: 0
-  m_Name: DestinationPicker_TextInputMethod
+  m_Name: PortalPicker_TextInputMethod
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4256,7 +4247,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840913182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.055953555, y: 6.957155, z: 80.5}
+  m_LocalPosition: {x: -0.055953555, y: -17.6, z: 80.5}
   m_LocalScale: {x: 4.2248, y: 4.2248, z: 4.2248}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5238,7 +5229,7 @@ PrefabInstance:
     - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}
       propertyPath: youtubeUrl
-      value: https://www.youtube.com/watch?v=aQYn3YGLod0
+      value: https://www.youtube.com/watch?v=GteTqtZvglI
       objectReference: {fileID: 0}
     - target: {fileID: 114179375918869224, guid: 5d410f561f4a06c4f93067d94dc545ce,
         type: 3}

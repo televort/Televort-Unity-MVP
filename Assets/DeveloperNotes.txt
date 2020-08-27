@@ -1,5 +1,13 @@
 NOTES:
 
-Type "/" key to display Destination Bar.
+User Controls:
 
-Type a destination and hit Return (Enter) key or press the "Go" button.
+TELEVORT:
+Type "/" key to display Portal Picker.
+Type the number that corresponds to a portal to load that scene.
+
+MOVE: Use arrow keys to move left, right, forward, and backward.
+
+LOOK: Use mouse to look around the scene.
+
+JUMP: Use spacebar to jump.
