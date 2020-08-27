@@ -6,76 +6,118 @@ using UnityEngine.SceneManagement;
 
 public class GUIController : MonoBehaviour
 {
-    public GameObject destinationInputFieldGameObject;
-    public InputField destinationInputField;
-    public string commandInput;
-    private bool isDestinationBarDisplayed = false;
-    public Scene[] scenes;
+    
+    public GameObject PortalPicker;
+    //public GameObject destinationInputFieldGameObject;
+    //public InputField destinationInputField;
+    //public string commandInput;
+    private bool isPortalPickerDisplayed = false;
+    private string sceneName;
 
     void Start()
     {
-        destinationInputFieldGameObject.SetActive(false);
-        commandInput = destinationInputField.text;
-}
+        PortalPicker.SetActive(false);
+        //commandInput = destinationInputField.text;
+        
+    }
 
     void Update()
     {
 
-
-
-        /* Controls if Text Input Method is used.
         if (Input.GetKeyUp("/"))
         {
-            if (!(isDestinationBarDisplayed))
+            if (!(isPortalPickerDisplayed))
             {
-                DisplayDestinationBar();
+                DisplayPortalPicker();
             }
         }
 
         if (Input.GetKeyUp("return"))
         {
-            if (isDestinationBarDisplayed)
+            if (isPortalPickerDisplayed)
             {
-                HideDestinationBar();
+                HidePortalPicker();
             }
-        } //return;
-        */
+        }
+
+
+        if (isPortalPickerDisplayed) {
+
+            // Press the key associated with the stage to start coroutine
+
+            //This is a nasty way to do it. I should be using switch statements instead. - DS
+
+            if (Input.GetKeyDown("1"))
+            {
+                sceneName = "Scene1";
+                // Use a coroutine to load Scene1 in the background
+                StartCoroutine(BeginLoadSceneAsync());
+                Debug.Log("Televorting to " + sceneName);
+
+            }
+
+            if (Input.GetKeyDown("2"))
+            {
+                sceneName = "Scene2";
+                // Use a coroutine to load the Scene2 in the background
+                StartCoroutine(BeginLoadSceneAsync());
+                Debug.Log("Televorting to " + sceneName);
+            }
+
+            if (Input.GetKeyDown("3"))
+            {
+                sceneName = "Scene3";
+                // Use a coroutine to load the Scene3 in the background
+                StartCoroutine(BeginLoadSceneAsync());
+                Debug.Log("Televorting to " + sceneName);
+            }
 
 
 
-
-
+        }
 
     }
 
-    // Encountering a bug in which the InputField Select is not working consistently on subsequent display 
-    // and hiding of destination bar. That is, after the first time the user hits / to display the bar and 
-    // return to hide it, it is inconsistent whether they input field will be selected when they display it again. -DS 08/27/2020
-
-    public void DisplayDestinationBar() {
-        Debug.Log("Destination bar displayed.");
-        isDestinationBarDisplayed = true;
-        destinationInputFieldGameObject.SetActive(true);
-        destinationInputField.Select();
-        Debug.Log("Input field selected.");
-    }
-
-    public void HideDestinationBar()
+    IEnumerator BeginLoadSceneAsync()
     {
-        Debug.Log("Destination bar hidden.");
-        isDestinationBarDisplayed = false;
-        destinationInputFieldGameObject.SetActive(false);
+        // Loads the Scene in the background as the current scene runs.
+
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName);
+
+        // Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
     }
 
-    public void PrintCommandInput() {
-        Debug.Log("Sent message: " + commandInput);
+    public void DisplayPortalPicker() {
+        Debug.Log("Portal Picker displayed.");
+        isPortalPickerDisplayed = true;
+        PortalPicker.SetActive(true);
+        //destinationInputField.Select();
+        //Debug.Log("Input field selected.");
     }
 
-    public void GoToNewDestination() {
-        commandInput = destinationInputField.text;
-        Debug.Log("Televorting to " + commandInput);                  // Find a scene by name or tag that the user inputs. Load that scene asynchronously.
+    public void HidePortalPicker()
+    {
+        Debug.Log("Portal Picker hidden.");
+        isPortalPickerDisplayed = false;
+        PortalPicker.SetActive(false);
     }
-
 
 
 }
+
+
+
+
+
+
+/* Add this to Update if we decide Text Input Method should be used.
+ // Encountering a bug in which the InputField Select is not working consistently on subsequent display 
+ // and hiding of destination bar. That is, after the first time the user hits / to display the bar and 
+ // return to hide it, it is inconsistent whether they input field will be selected when they display it again. -DS 08/27/2020
+
+ //return;
+*/
