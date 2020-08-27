@@ -14,7 +14,7 @@ public class GUIController : MonoBehaviour
     void Start()
     {
         destinationInputFieldGameObject.SetActive(false);
-        //commandInput = destinationInputField.text;
+        commandInput = destinationInputField.text;
 }
 
     // Update is called once per frame
@@ -37,10 +37,14 @@ public class GUIController : MonoBehaviour
         } //return;
     }
 
+    // Encountering a bug in which the InputField Select is not working consistently on subsequent display 
+    // and hiding of destination bar. That is, after the first time the user hits / to display the bar and 
+    // return to hide it, it is inconsistent whether they input field will be selected when they display it again. -DS 08/27/2020
+
     public void DisplayDestinationBar() {
         Debug.Log("Destination bar displayed.");
-        destinationInputFieldGameObject.SetActive(true);
         isDestinationBarDisplayed = true;
+        destinationInputFieldGameObject.SetActive(true);
         destinationInputField.Select();
         Debug.Log("Input field selected.");
     }
