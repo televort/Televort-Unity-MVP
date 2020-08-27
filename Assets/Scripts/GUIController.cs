@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GUIController : MonoBehaviour
 {
@@ -9,17 +10,20 @@ public class GUIController : MonoBehaviour
     public InputField destinationInputField;
     public string commandInput;
     private bool isDestinationBarDisplayed = false;
+    public Scene[] scenes;
 
-    // Start is called before the first frame update
     void Start()
     {
         destinationInputFieldGameObject.SetActive(false);
         commandInput = destinationInputField.text;
 }
 
-    // Update is called once per frame
     void Update()
     {
+
+
+
+        /* Controls if Text Input Method is used.
         if (Input.GetKeyUp("/"))
         {
             if (!(isDestinationBarDisplayed))
@@ -35,6 +39,13 @@ public class GUIController : MonoBehaviour
                 HideDestinationBar();
             }
         } //return;
+        */
+
+
+
+
+
+
     }
 
     // Encountering a bug in which the InputField Select is not working consistently on subsequent display 
