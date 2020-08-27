@@ -8,6 +8,7 @@ public class GUIController : MonoBehaviour
     public GameObject destinationInputFieldGameObject;
     public InputField destinationInputField;
     public string commandInput;
+    private bool isDestinationBarDisplayed = false;
 
     // Start is called before the first frame update
     void Start()
@@ -19,16 +20,36 @@ public class GUIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp("/")) {
-            DisplayDestinationBar();
+        if (Input.GetKeyUp("/"))
+        {
+            if (!(isDestinationBarDisplayed))
+            {
+                DisplayDestinationBar();
+            }
         }
+
+        if (Input.GetKeyUp("return"))
+        {
+            if (isDestinationBarDisplayed)
+            {
+                HideDestinationBar();
+            }
+        } //return;
     }
 
     public void DisplayDestinationBar() {
         Debug.Log("Destination bar displayed.");
         destinationInputFieldGameObject.SetActive(true);
+        isDestinationBarDisplayed = true;
         destinationInputField.Select();
         Debug.Log("Input field selected.");
+    }
+
+    public void HideDestinationBar()
+    {
+        Debug.Log("Destination bar hidden.");
+        isDestinationBarDisplayed = false;
+        destinationInputFieldGameObject.SetActive(false);
     }
 
     public void PrintCommandInput() {
