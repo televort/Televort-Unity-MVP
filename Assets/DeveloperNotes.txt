@@ -1,0 +1,5 @@
+NOTES:
+
+Type "/" key to display Destination Bar.
+
+Type a destination and hit Return (Enter) key or press the "Go" button.
